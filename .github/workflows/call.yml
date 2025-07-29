@@ -1,0 +1,15 @@
+name: Enviar código para FPGA
+
+on:
+  push:
+    branches:
+      - main  # ou o branch que preferir
+
+jobs:
+  enviar-job:
+    uses: FPGA-2025/fpga-envio-central/.github/workflows/send.yml@main
+    secrets:
+      PROXY_PASS: ${{ secrets.PROXY_PASS }}
+      TARGET_PASS: ${{ secrets.TARGET_PASS }}
+      HOSTNAME: ${{ secrets.HOSTNAME }}
+      USERNAME: ${{ secrets.USERNAME }}
